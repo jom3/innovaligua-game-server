@@ -18,7 +18,6 @@ export class WordsService {
 
   async create(createWordDto: CreateWordDto, file:Express.Multer.File) {
     try {
-      console.log(createWordDto)
       const word = this.wordRepository.create({
         image: file.filename,
         ...createWordDto

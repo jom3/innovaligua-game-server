@@ -84,10 +84,8 @@ export class ActivitiesService {
   }
 
   async checked(id: string, checkActivityDto:CheckActivityDto) {
-    console.log(id, checkActivityDto)
     const {score} = checkActivityDto
     const activity = await this.findOne(id);
-    console.log(activity.attempts)
     if(score===100 && activity.attempts>=1){
       await this.activityRepository.update({id},{
         state:2,

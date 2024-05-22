@@ -48,7 +48,6 @@ export class WordsController {
     return this.wordsService.create(createWordDto, file);
   }
 
-  @UseGuards(AuthGuard)
   @Get('file/:wordImage')
   @Header('Content-Type', 'image/jpeg')
   findWordImage(@Param('wordImage') wordImage:string){
